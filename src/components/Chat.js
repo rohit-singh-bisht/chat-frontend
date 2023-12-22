@@ -7,7 +7,7 @@ const Chat = () => {
   const [typedChat, setTypedChat] = useState();
 
   return (
-    <div className="flex h-screen gap-6 p-10">
+    <div className="flex h-screen gap-6 p-10 overflow-hidden">
       <div className="flex flex-col flex-1 flex-shrink-0 bg-white border-gray-200 dark:bg-gray-900 relative rounded-md">
         <Chatbox
           title={"All Chats"}
