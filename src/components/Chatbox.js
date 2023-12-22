@@ -32,7 +32,7 @@ const Chatbox = ({ title, chats, upvote = 0, setChats, lessThanVote = 0 }) => {
   return (
     <>
       {title && (
-        <div className="text-lg font-bold text-center uppercase rounded-md rounded-b-none dark:bg-gray-800 py-2 sticky top-0 z-50">
+        <div className="text-lg font-bold text-center uppercase rounded-md rounded-b-none dark:bg-gray-800 py-3 sticky top-0 z-50">
           {title}
         </div>
       )}
@@ -42,6 +42,7 @@ const Chatbox = ({ title, chats, upvote = 0, setChats, lessThanVote = 0 }) => {
       >
         {chats
           ?.filter((chat) => {
+            console.log(lessThanVote, "lessThanVote");
             if (lessThanVote > 0) {
               return chat?.votes >= upvote && chat?.votes < lessThanVote;
             }

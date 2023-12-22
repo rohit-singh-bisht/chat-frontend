@@ -8,7 +8,18 @@ const MessageBox = ({ typedChat, setTypedChat, setChats, chats }) => {
     setTypedChat(newText);
   };
 
+  const handleKeyDown = (e) => {
+    const keyPressed = e.key;
+    if (keyPressed === "Enter") {
+      e.preventDefault();
+      handleSendChat();
+    }
+  };
+
   const handleSendChat = () => {
+    if (!typedChat?.length) {
+      return;
+    }
     setChats((prev) => [
       ...prev,
       {
@@ -17,6 +28,8 @@ const MessageBox = ({ typedChat, setTypedChat, setChats, chats }) => {
         votes: 0,
       },
     ]);
+    setTypedChat("");
+    inputRef.current.textContent = "";
   };
 
   return (
@@ -27,6 +40,7 @@ const MessageBox = ({ typedChat, setTypedChat, setChats, chats }) => {
           contentEditable
           onInput={handleChange}
           ref={inputRef}
+          onKeyDown={handleKeyDown}
         ></div>
       </div>
       <button

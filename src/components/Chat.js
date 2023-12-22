@@ -9,13 +9,18 @@ const Chat = () => {
   return (
     <div className="flex h-screen gap-6 p-10">
       <div className="flex flex-col flex-1 flex-shrink-0 bg-white border-gray-200 dark:bg-gray-900 relative rounded-md">
-        <Chatbox title={"Chats"} chats={chats} setChats={setChats} />
+        <Chatbox
+          title={"All Chats"}
+          chats={chats}
+          setChats={setChats}
+          upvote={0}
+          lessThanVote={3}
+        />
         <MessageBox
           typedChat={typedChat}
           setTypedChat={setTypedChat}
           setChats={setChats}
           chats={chats}
-          lessThanVote={3}
         />
       </div>
       <div className="flex-1 flex-shrink-0 bg-white border-gray-200 dark:bg-gray-900 rounded-md">
