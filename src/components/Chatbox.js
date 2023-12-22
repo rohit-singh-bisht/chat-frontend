@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 
 const Chatbox = ({ title, chats, upvote = 0, setChats, lessThanVote = 0 }) => {
